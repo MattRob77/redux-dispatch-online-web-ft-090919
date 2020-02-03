@@ -1,3 +1,5 @@
+let state = {count:0}
+
 function changeState(state, action){
   switch (action.type) {
     case 'INCREASE_COUNT':
@@ -6,8 +8,7 @@ function changeState(state, action){
       return state;
   }
 }
-
-let state = {count: 0}
-let action = {type: 'INCREASE_COUNT'}
-
-changeState(state, action)
+function despatch(action) {
+  state = changeState(state, action)
+  return state
+}
